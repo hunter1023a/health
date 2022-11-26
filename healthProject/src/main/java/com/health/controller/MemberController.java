@@ -70,7 +70,7 @@ public class MemberController {
 		log.info("로그인 : "+vo);
 		int result = service.login(vo.getId(), vo.getPassword());
 		
-		if(result==1) {
+		if(result>0) {
 			//로그인 성공시 동작.... 
 			session.setAttribute("user_id", vo.getId());
 			return "redirect:/";   //home... 
